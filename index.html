@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SpineRemind</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: #f9f9fb;
+    }
+    header {
+      background: #0B163F;
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 4px; }
+    header p  { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0B163F;
+      margin: 36px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8eaf2;
+    }
+    p, li { color: #333; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    strong { color: #0B163F; }
+    .highlight {
+      background: #eef0fb;
+      border-left: 4px solid #7A5CFF;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .highlight p { margin: 0; }
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #888;
+      margin-top: 60px;
+    }
+    a { color: #7A5CFF; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SpineRemind — Privacy Policy</h1>
+  <p>Effective date: 14 April 2026 &nbsp;·&nbsp; Spine Tech AU</p>
+</header>
+
+<main>
+
+  <div class="highlight">
+    <p><strong>Plain-language summary:</strong> SpineRemind is a tool for clinic staff only. It reads appointment data from your Cliniko account and sends SMS reminders directly from your Android device. No patient data is ever sent to us or any third party. Everything stays on your device and inside Cliniko.</p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>SpineRemind is operated by <strong>Spine Tech AU</strong>. We built this app to help chiropractic and allied health clinics send appointment and birthday SMS reminders to their own patients, using their own Cliniko account and their own Android device's SMS capability.</p>
+  <p>For privacy enquiries, contact: <a href="mailto:nick@weiland.com.au">nick@weiland.com.au</a></p>
+
+  <h2>2. What data the app accesses</h2>
+  <p>The app accesses the following data <strong>on your behalf</strong>, using the Cliniko API key you provide:</p>
+  <ul>
+    <li>Patient first name, last name, and preferred name</li>
+    <li>Patient mobile phone numbers</li>
+    <li>Appointment dates and times</li>
+    <li>Date of birth (for birthday reminders only)</li>
+  </ul>
+  <p>This data is fetched directly from Cliniko's servers to your device. It is used solely to compose and send SMS messages from your device. It is <strong>not stored permanently</strong> — it is loaded into memory for the current session and discarded after sending.</p>
+
+  <h2>3. What data is stored on your device</h2>
+  <p>The following is stored locally on the device running SpineRemind, using Android's encrypted storage:</p>
+  <ul>
+    <li><strong>Cliniko API key</strong> — stored in Android Keystore-backed EncryptedSharedPreferences. Never transmitted to anyone other than Cliniko.</li>
+    <li><strong>Practice name</strong> — used as a placeholder in SMS templates.</li>
+    <li><strong>SMS templates</strong> — custom message bodies you create.</li>
+    <li><strong>Reminder schedule</strong> — the time and frequency you configure.</li>
+    <li><strong>Sent log</strong> — a local record of phone numbers and message text for messages sent during the current session. Viewable in-app and clearable at any time.</li>
+    <li><strong>Optional PIN</strong> — a numeric PIN you may set to lock the app, stored encrypted on-device.</li>
+  </ul>
+  <p>None of this data leaves your device except the API key, which is sent to Cliniko only to authenticate API requests.</p>
+
+  <h2>4. Data we do not collect</h2>
+  <p>Spine Tech AU <strong>does not collect, receive, store, or process</strong> any of the following:</p>
+  <ul>
+    <li>Patient names, phone numbers, or health information</li>
+    <li>Your Cliniko API key</li>
+    <li>Messages sent via the app</li>
+    <li>Analytics, usage statistics, or crash reports</li>
+    <li>Device identifiers or location data</li>
+  </ul>
+  <p>There are no third-party analytics SDKs, advertising SDKs, or remote logging services in this app.</p>
+
+  <h2>5. SMS sending</h2>
+  <p>SMS messages are sent using your Android device's built-in SMS capability (<code>SmsManager</code>). Messages are sent directly from your SIM card to the patient's phone number. Standard carrier SMS charges may apply. Spine Tech AU does not route, log, or intercept these messages.</p>
+
+  <h2>6. Background processing</h2>
+  <p>When you enable automatic reminders, the app schedules a daily background task (via Android WorkManager). This task:</p>
+  <ul>
+    <li>Reads your Cliniko API key from encrypted local storage</li>
+    <li>Connects to Cliniko's API to fetch upcoming appointments</li>
+    <li>Sends SMS reminders directly from your device</li>
+    <li>Posts a notification summarising how many messages were sent</li>
+  </ul>
+  <p>No data from this process is transmitted anywhere other than to Cliniko (API request) and the patient's phone (SMS).</p>
+
+  <h2>7. Australian Privacy Act 1988</h2>
+  <p>Patient information accessed through SpineRemind is health information as defined under the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs). As the clinic operating this app:</p>
+  <ul>
+    <li>You are the data controller responsible for ensuring patient consent for SMS communications</li>
+    <li>You should have a current privacy policy covering how you use patient contact details for appointment communications</li>
+    <li>Cliniko's own Privacy Policy governs how patient data is stored in Cliniko</li>
+  </ul>
+  <p>SpineRemind processes this data as a tool for your clinic — we do not independently hold or control patient data.</p>
+
+  <h2>8. Data retention and deletion</h2>
+  <p>All locally stored data (API key, templates, sent log, PIN) can be cleared by:</p>
+  <ul>
+    <li>Clearing the sent log in-app (Settings → Sent Log → Clear)</li>
+    <li>Removing the app from your device (all encrypted local data is deleted by Android)</li>
+  </ul>
+  <p>Cliniko patient data is managed through your Cliniko account, not through this app.</p>
+
+  <h2>9. Security</h2>
+  <p>Your Cliniko API key is stored using Android Keystore-backed <code>EncryptedSharedPreferences</code> — the same encryption standard recommended by Google for sensitive credentials on Android. The app requires Android 6.0 (API 23) or higher, which is necessary to support this level of security.</p>
+
+  <h2>10. Children</h2>
+  <p>SpineRemind is intended for use by healthcare clinic staff only. It is not directed at or intended for use by individuals under 18.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>If we make material changes to this policy, we will update the effective date above and, where practical, notify clinic administrators through the app. Continued use of the app after changes constitutes acceptance.</p>
+
+  <h2>12. Contact</h2>
+  <p>For any privacy-related questions or requests, contact:</p>
+  <p>
+    <strong>Spine Tech AU</strong><br>
+    Email: <a href="mailto:nick@weiland.com.au">nick@weiland.com.au</a>
+  </p>
+
+  <footer>
+    <p>SpineRemind &nbsp;·&nbsp; Spine Tech AU &nbsp;·&nbsp; Last updated 14 April 2026</p>
+  </footer>
+
+</main>
+</body>
+</html>
