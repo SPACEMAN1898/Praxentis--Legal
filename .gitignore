@@ -1,0 +1,5 @@
+# Claude Code tooling — local only, never commit
+.claude-flow/
+
+# OS
+.DS_Store
