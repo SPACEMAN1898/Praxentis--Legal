@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — CliniTrack</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: #f9f9fb;
+    }
+    header {
+      background: #0B163F;
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 4px; }
+    header p  { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0B163F;
+      margin: 36px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8eaf2;
+    }
+    p, li { color: #333; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    strong { color: #0B163F; }
+    .highlight {
+      background: #eef0fb;
+      border-left: 4px solid #7A5CFF;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .highlight p { margin: 0; }
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #888;
+      margin-top: 60px;
+    }
+    a { color: #7A5CFF; }
+    code { background: #eef0fb; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CliniTrack — Privacy Policy</h1>
+  <p>Effective date: 7 May 2026 &nbsp;·&nbsp; Praxentis / Spine Tech AU</p>
+</header>
+
+<main>
+
+  <div class="highlight">
+    <p><strong>Plain-language summary:</strong> CliniTrack is a tool for clinic staff. It reads patient and appointment data from your Cliniko account, generates clinical documents, and sends SMS reminders directly from your Android device. No patient data is ever sent to Praxentis or any third party. Patient data stays on your device and inside Cliniko.</p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>CliniTrack is operated by <strong>Praxentis</strong> (trading as <strong>Spine Tech AU</strong>). We built CliniTrack to help chiropractic and allied health clinics manage patient progress tracking, generate referral and assessment documents, and send appointment-related SMS communications using the clinic's own Cliniko account and the clinic's own Android device.</p>
+  <p>For privacy enquiries, contact: <a href="mailto:owner@praxentis.co.site">owner@praxentis.co.site</a></p>
+
+  <h2>2. Scope</h2>
+  <p>This policy applies to clinic staff who install and use the CliniTrack Android application. CliniTrack is intended for use by registered healthcare practitioners and authorised clinic staff working under a current Cliniko subscription. It is not intended for use by patients directly.</p>
+
+  <h2>3. What data the app accesses</h2>
+  <p>Using the Cliniko API key you provide, CliniTrack accesses the following data <strong>on your behalf</strong>, directly from Cliniko's servers to your device:</p>
+  <ul>
+    <li>Patient demographics (name, preferred name, date of birth, sex, address, phone, email, occupation)</li>
+    <li>Appointments (date, time, type, practitioner, status)</li>
+    <li>Practitioner directory (name, AHPRA number, provider number, contact details)</li>
+    <li>Clinical notes, treatment notes, and patient case-notes (where you choose to view or include them in generated documents)</li>
+    <li>Practice/business information (clinic name, address, contact details, ABN)</li>
+  </ul>
+  <p>This data is fetched on demand and used to populate the app's screens, generate documents, and compose SMS messages. It is not transmitted to Praxentis or any third party.</p>
+
+  <h2>4. What data is stored on your device</h2>
+  <p>The following is stored locally on the device running CliniTrack, using Android's encrypted storage:</p>
+  <ul>
+    <li><strong>Cliniko API key and shard</strong> — stored in Android Keystore-backed <code>EncryptedSharedPreferences</code>. Sent only to Cliniko's API to authenticate requests; never transmitted to Praxentis or any third party.</li>
+    <li><strong>Practitioner profile</strong> — selected practitioner identity for document signing (name, AHPRA number, provider number, signature block).</li>
+    <li><strong>Document templates</strong> — referral letter, report, and assessment templates with merge-field placeholders.</li>
+    <li><strong>Recently used recipients</strong> — names and contact details of GPs and other practitioners you have sent referrals to, for autocomplete.</li>
+    <li><strong>SMS workflow configuration</strong> — message templates, schedule windows, and per-workflow enable/disable flags for the Autobot SMS features.</li>
+    <li><strong>Opt-out list</strong> — phone numbers of patients who have texted "STOP" or have been manually opted out, with timestamp and source. Required by the <em>Spam Act 2003</em> (Cth).</li>
+    <li><strong>Audit log</strong> — append-only record of every SMS send, with timestamp, recipient (last 4 digits of phone number), workflow type, and outcome (sent/failed/skipped). Capped at the most recent 2,000 entries.</li>
+    <li><strong>Patient progress data</strong> — outcome measures (ODI, BMQ, NPRS), intake-survey responses, and movement-assessment results captured in the app for the current session, optionally posted back to Cliniko as treatment notes.</li>
+    <li><strong>App PIN and biometric setting</strong> — a numeric PIN and biometric-unlock preference, stored encrypted on-device.</li>
+    <li><strong>Generated PDFs</strong> — referral letters, assessment reports, and other documents are saved to the device's app-specific storage and may be shared, printed, or uploaded back to Cliniko at your discretion.</li>
+  </ul>
+  <p>None of this data leaves your device except: (a) the Cliniko API key when authenticating with Cliniko, (b) data you explicitly upload back to Cliniko (such as documents and treatment notes), and (c) SMS messages sent from your device to patients.</p>
+
+  <h2>5. Data Praxentis does not collect</h2>
+  <p>Praxentis <strong>does not collect, receive, store, or process</strong> any of the following:</p>
+  <ul>
+    <li>Patient names, phone numbers, dates of birth, addresses, or any patient health information</li>
+    <li>Your Cliniko API key</li>
+    <li>The content of SMS messages sent or received via the app</li>
+    <li>Audit log entries</li>
+    <li>Generated documents or PDFs</li>
+    <li>Analytics, usage statistics, or crash reports</li>
+    <li>Device identifiers, advertising IDs, or location data</li>
+  </ul>
+  <p>There are no third-party analytics SDKs, advertising SDKs, attribution SDKs, or remote logging services in this app. CliniTrack does not use the Android Advertising ID.</p>
+
+  <h2>6. SMS sending (Autobot)</h2>
+  <p>CliniTrack's Autobot feature sends SMS using your Android device's built-in SMS capability (<code>android.telephony.SmsManager</code>). Messages are sent directly from your SIM card to the patient's phone number using the device's mobile carrier. Standard carrier SMS charges may apply.</p>
+  <p>Praxentis does not route, log, intercept, or store these messages. The two SMS workflows in the app are:</p>
+  <ul>
+    <li><strong>Workflow A — Declined-call auto-reply:</strong> when the device declines or misses a call from a patient phone number on file in Cliniko, the device sends a configurable SMS reply.</li>
+    <li><strong>Workflow B — Appointment reminder dispatcher:</strong> a scheduled background task reads tomorrow's appointments from Cliniko and sends reminder SMS messages from the device.</li>
+  </ul>
+
+  <h2>7. Two-way SMS and opt-out handling</h2>
+  <p>To comply with the <em>Spam Act 2003</em> (Cth), CliniTrack reads the device SMS inbox to detect replies from patients containing the keyword "STOP" (or equivalent opt-out terms). When such a reply is detected, the patient's phone number is added to the on-device opt-out list and no further SMS will be sent to them by the app.</p>
+  <p>Inbox reading is limited to filtering for opt-out keywords from numbers the app has previously messaged. Message content from non-clinic contacts is not read, stored, or transmitted.</p>
+
+  <h2>8. Phone state and call detection</h2>
+  <p>The app uses Android's <code>READ_PHONE_STATE</code> and <code>ANSWER_PHONE_CALLS</code> permissions only to detect when an incoming call is declined or missed, so that Workflow A can send the configured auto-reply SMS. The app does not record calls, log call duration, or transmit call metadata anywhere.</p>
+
+  <h2>9. Camera</h2>
+  <p>The app uses the device camera only when you tap "Camera" in the document-attachment dialog to capture a photograph (for example, of a paper form or clinical observation) for upload to a patient's Cliniko record. Photos captured this way are uploaded to your Cliniko account; they are not transmitted to Praxentis.</p>
+
+  <h2>10. App updates (OTA)</h2>
+  <p>CliniTrack includes an over-the-air update check that contacts a Praxentis-controlled update endpoint to retrieve the current version manifest. The update endpoint receives only your device's request for the manifest; it does not receive patient data, your Cliniko API key, or any clinical content. If an update is available, the app downloads the new APK and uses Android's standard installer (requiring the <code>REQUEST_INSTALL_PACKAGES</code> permission) to install it. You may decline any update.</p>
+
+  <h2>11. Background processing</h2>
+  <p>When you enable Workflow B (appointment reminders), the app schedules a background task using Android WorkManager. Each scheduled run:</p>
+  <ul>
+    <li>Reads your Cliniko API key from encrypted local storage</li>
+    <li>Connects to Cliniko's API to fetch the next day's appointments</li>
+    <li>Filters out patients on the opt-out list</li>
+    <li>Sends SMS reminders directly from your device using <code>SmsManager</code></li>
+    <li>Appends an entry to the on-device audit log</li>
+    <li>Posts a notification summarising the run</li>
+  </ul>
+  <p>No data from this process is transmitted anywhere other than to Cliniko (API request) and the patient's phone (SMS).</p>
+
+  <h2>12. Australian Privacy Act 1988</h2>
+  <p>Patient information accessed through CliniTrack is health information as defined under the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs). As the clinic operating this app:</p>
+  <ul>
+    <li>You are the data controller responsible for ensuring patient consent for SMS communications and document generation</li>
+    <li>You should have a current privacy policy covering how you use patient contact details for appointment communications and clinical correspondence</li>
+    <li>Cliniko's own Privacy Policy governs how patient data is stored in Cliniko</li>
+    <li>SMS communications must comply with the <em>Spam Act 2003</em> — recipients must have consented (express or inferred) to receive marketing-style messages, and every message must offer a way to unsubscribe</li>
+  </ul>
+  <p>CliniTrack is a tool for your clinic — Praxentis does not independently hold or control patient data accessed through the app.</p>
+
+  <h2>13. AHPRA</h2>
+  <p>CliniTrack is intended for use by registered healthcare practitioners and authorised clinic staff. Practitioners using the app remain individually responsible for their professional conduct, including the appropriateness of clinical documents generated and SMS communications sent through the app, in accordance with their AHPRA board's guidelines.</p>
+
+  <h2>14. Data retention and deletion</h2>
+  <p>All locally stored data can be cleared by:</p>
+  <ul>
+    <li>Clearing the audit log in-app (Settings → Audit Log → Clear)</li>
+    <li>Clearing the opt-out list in-app (Autobot → Opt-out list → Clear)</li>
+    <li>Removing the Cliniko credentials in-app (Settings → Cliniko → Disconnect)</li>
+    <li>Removing the app from your device (all encrypted local data is deleted by Android)</li>
+  </ul>
+  <p>Cliniko patient data is managed through your Cliniko account, not through this app.</p>
+
+  <h2>15. Security</h2>
+  <p>Sensitive credentials (Cliniko API key, app PIN) are stored using Android Keystore-backed <code>EncryptedSharedPreferences</code> — the encryption standard recommended by Google for sensitive data on Android. All network traffic to Cliniko uses TLS 1.2 or higher. The app blocks cleartext network traffic and trusts only system-supplied certificate authorities. The app supports biometric unlock (fingerprint, face) where available on the device.</p>
+
+  <h2>16. Children</h2>
+  <p>CliniTrack is intended for use by clinic staff only. It is not directed at or intended for use by individuals under 18. Patients of any age may have their information accessed through the app by clinic staff, in the same manner as the clinic's existing Cliniko workflow.</p>
+
+  <h2>17. Changes to this policy</h2>
+  <p>If we make material changes to this policy, we will update the effective date above and, where practical, notify clinic administrators through the app or by email. Continued use of the app after changes constitutes acceptance.</p>
+
+  <h2>18. Contact</h2>
+  <p>For any privacy-related questions, requests, or complaints, contact:</p>
+  <p>
+    <strong>Praxentis / Spine Tech AU</strong><br>
+    Email: <a href="mailto:owner@praxentis.co.site">owner@praxentis.co.site</a>
+  </p>
+  <p>If you are not satisfied with our response, you may lodge a complaint with the <strong>Office of the Australian Information Commissioner (OAIC)</strong> at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer">www.oaic.gov.au</a>.</p>
+
+  <footer>
+    <p>CliniTrack &nbsp;·&nbsp; Praxentis / Spine Tech AU &nbsp;·&nbsp; Last updated 7 May 2026</p>
+  </footer>
+
+</main>
+</body>
+</html>
